@@ -1,0 +1,630 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plenux Market - Manual de Neurohacking Premium</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            darkblue: '#0A192F',    // Fondo azul marino ultra profundo del logo
+                            navy: '#112240',        // Azul navy para tarjetas y contenedores
+                            sky: '#38BDF8',         // Celeste/Azul brillante de la izquierda del isotipo
+                            brightblue: '#0EA5E9',  // Azul intermedio para acentos activos y gradientes
+                            silver: '#94A3B8',      // Gris plata de la derecha del isotipo y "MARKET"
+                            ice: '#E2E8F0',         // Blanco/azul hielo suave para texto secundario
+                            purewhite: '#FFFFFF'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Transiciones suaves para el cambio de página */
+        .page-transition {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        /* Barra de desplazamiento elegante a juego con Plenux Market */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0A192F;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #38BDF8;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="bg-brand-darkblue text-gray-200 font-sans min-h-screen flex flex-col justify-between selection:bg-brand-sky selection:text-brand-darkblue">
+
+    <!-- Cabecera / Barra de Marca -->
+    <header class="bg-brand-darkblue/90 backdrop-blur-md border-b border-brand-navy sticky top-0 z-50 px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+            <!-- Representación simplificada del Isotipo en SVG -->
+            <svg class="w-6 h-6" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Lado izquierdo (Azul brillante del Logo) -->
+                <path d="M25 15 L45 35 L45 65 L25 85 L10 70 L25 50 L10 30 Z" fill="url(#blue-grad)" />
+                <!-- Lado derecho (Gris plata del Logo) -->
+                <path d="M75 15 L55 35 L55 65 L75 85 L90 70 L75 50 L90 30 Z" fill="url(#silver-grad)" />
+                <defs>
+                    <linearGradient id="blue-grad" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#0EA5E9" />
+                        <stop offset="100%" stop-color="#38BDF8" />
+                    </linearGradient>
+                    <linearGradient id="silver-grad" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#64748B" />
+                        <stop offset="100%" stop-color="#94A3B8" />
+                    </linearGradient>
+                </defs>
+            </svg>
+            <div class="flex flex-col leading-none">
+                <span class="text-white text-base font-black tracking-wider">PLENUX</span>
+                <span class="text-brand-silver text-[9px] font-bold tracking-widest">MARKET</span>
+            </div>
+        </div>
+        <div class="bg-brand-navy px-3 py-1 rounded-full text-xs font-semibold text-brand-sky border border-brand-sky/20 flex items-center space-x-1">
+            <span class="w-1.5 h-1.5 bg-brand-sky rounded-full animate-pulse"></span>
+            <span>Premium Hub</span>
+        </div>
+    </header>
+
+    <!-- Área de Contenido Principal -->
+    <main class="flex-grow max-w-md mx-auto w-full px-4 py-6 md:py-8 overflow-x-hidden">
+
+        <!-- Indicador de Progreso de Lectura -->
+        <div class="mb-6">
+            <div class="flex justify-between items-center text-xs text-brand-sky/80 mb-2 font-mono">
+                <span class="uppercase tracking-wider font-bold">Progreso de lectura</span>
+                <span id="page-counter">Página 1 de 5</span>
+            </div>
+            <div class="w-full bg-brand-navy h-1.5 rounded-full overflow-hidden border border-brand-navy">
+                <div id="progress-bar" class="bg-gradient-to-r from-brand-brightblue to-brand-sky h-full w-1/5 transition-all duration-300"></div>
+            </div>
+        </div>
+
+        <!-- ================= PÁGINA 1: PORTADA ================= -->
+        <section id="page-1" class="page-transition block">
+            <div class="bg-gradient-to-b from-brand-navy to-brand-darkblue rounded-3xl p-6 border border-brand-sky/10 shadow-2xl relative overflow-hidden">
+                <!-- Destello de fondo decorativo celeste -->
+                <div class="absolute -right-16 -top-16 w-36 h-36 bg-brand-sky/10 rounded-full blur-3xl"></div>
+                
+                <div class="text-center mt-4">
+                    <span class="bg-brand-sky/10 text-brand-sky border border-brand-sky/20 px-3 py-1 rounded-full text-xs uppercase font-bold tracking-widest">Guía de Neurohacking</span>
+                    <h1 class="text-3xl font-black text-white mt-4 tracking-tight leading-tight">
+                        Enfoque Total y <br><span class="text-brand-sky">Cero Estrés</span>
+                    </h1>
+                    <p class="text-brand-silver mt-3 text-sm font-light italic">
+                        Tu guía paso a paso para maximizar el uso de tu suplementación premium y activar tu máximo nivel de productividad.
+                    </p>
+                </div>
+
+                <!-- Ilustración del Isotipo Recreado de Plenux Market -->
+                <div class="my-8 flex justify-center">
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-brand-sky/15 rounded-full blur-2xl animate-pulse"></div>
+                        <div class="bg-brand-navy/90 border-2 border-brand-sky/30 rounded-3xl p-6 flex flex-col items-center justify-center w-48 h-48 relative z-10">
+                            <!-- Isotipo Grande SVG idéntico al logo -->
+                            <svg class="w-20 h-20 mb-3" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M25 15 L45 35 L45 65 L25 85 L10 70 L25 50 L10 30 Z" fill="url(#big-blue-grad)" />
+                                <path d="M75 15 L55 35 L55 65 L75 85 L90 70 L75 50 L90 30 Z" fill="url(#big-silver-grad)" />
+                                <defs>
+                                    <linearGradient id="big-blue-grad" x1="0" y1="0" x2="1" y2="1">
+                                        <stop offset="0%" stop-color="#0EA5E9" />
+                                        <stop offset="100%" stop-color="#38BDF8" />
+                                    </linearGradient>
+                                    <linearGradient id="big-silver-grad" x1="0" y1="0" x2="1" y2="1">
+                                        <stop offset="0%" stop-color="#64748B" />
+                                        <stop offset="100%" stop-color="#cbd5e1" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <span class="text-[11px] text-white font-black uppercase tracking-widest">Sinergia Activa</span>
+                            <span class="text-[9px] text-brand-sky font-semibold">Plenux Market</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-4 text-gray-300 text-sm leading-relaxed text-center px-2">
+                    <p class="font-bold text-white text-base">
+                        ¡Felicidades por tu compra!
+                    </p>
+                    <p class="text-gray-400">
+                        Como agradecimiento por confiar en nosotros, hemos preparado este manual estratégico de neurohacking para que aprendas a exprimir cada beneficio de tus nuevos aliados naturales.
+                    </p>
+                    <div class="bg-brand-navy/80 rounded-2xl p-4 border border-brand-sky/10 mt-4">
+                        <p class="text-[10px] text-brand-sky tracking-widest uppercase font-bold">
+                            Preparado exclusivamente para la comunidad de clientes de
+                        </p>
+                        <p class="text-base text-white font-extrabold mt-1 tracking-wide">Plenux Market</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PÁGINA 2: EL PODER DE LA SINERGIA ================= -->
+        <section id="page-2" class="page-transition hidden">
+            <div class="bg-brand-navy rounded-3xl p-6 border border-brand-sky/10 shadow-xl space-y-6">
+                <div class="text-center">
+                    <span class="text-xs text-brand-sky uppercase tracking-widest font-extrabold">Fórmula Científica</span>
+                    <h2 class="text-2xl font-bold text-white mt-1">El Poder de la Sinergia</h2>
+                    <p class="text-xs text-brand-silver mt-1">Tus 3 Aliados de Alto Valor</p>
+                </div>
+
+                <p class="text-sm text-gray-300 leading-relaxed bg-brand-darkblue/60 p-4 rounded-2xl border border-brand-sky/5">
+                    Cuando consumes un suplemento aislado obtienes un buen resultado, pero cuando combinas los ingredientes correctos bajo una estrategia científica, creas una <strong>sinergia</strong>. Los componentes potencian sus efectos mutuamente, logrando un impacto mucho mayor en tu sistema nervioso, digestivo y celular.
+                </p>
+
+                <!-- Aliado 1 -->
+                <div class="bg-brand-darkblue/80 p-4 rounded-2xl border-l-4 border-brand-sky space-y-2">
+                    <div class="flex items-center space-x-2">
+                        <span class="text-xl">🧠</span>
+                        <h3 class="text-sm font-bold text-white">1. Melena de León <span class="text-brand-sky text-xs block">(Plenux Premium)</span></h3>
+                    </div>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        Este hongo medicinal es famoso por estimular el Factor de Crecimiento Nervioso (NGF), ayudando a tu cerebro a regenerar neuronas, mejorar la concentración profunda y agilizar la memoria a largo plazo.
+                    </p>
+                    <div class="bg-brand-sky/5 p-2 rounded-xl border border-brand-sky/10 mt-1">
+                        <p class="text-xs text-brand-sky font-bold">💡 Beneficio extra:</p>
+                        <p class="text-[11px] text-gray-300">Protege tu mucosa estomacal. Actúa como un bálsamo natural que previene y alivia la gastritis generada por las preocupaciones o el estrés.</p>
+                    </div>
+                </div>
+
+                <!-- Aliado 2 -->
+                <div class="bg-brand-darkblue/80 p-4 rounded-2xl border-l-4 border-brand-sky space-y-2">
+                    <div class="flex items-center space-x-2">
+                        <span class="text-xl">🌿</span>
+                        <h3 class="text-sm font-bold text-white">2. Ashwagandha <span class="text-brand-sky text-xs block">(Plenux Premium)</span></h3>
+                    </div>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        Como adaptógeno milenario, la Ashwagandha le enseña a tu cuerpo a reaccionar de manera inteligente ante la presión. Reduce los niveles de cortisol (la hormona del estrés), disipa la ansiedad diaria y calma la mente acelerada sin causarte somnolencia.
+                    </p>
+                    <div class="bg-brand-sky/5 p-2 rounded-xl border border-brand-sky/10 mt-1">
+                        <p class="text-xs text-brand-sky font-bold">💡 Beneficio extra:</p>
+                        <p class="text-[11px] text-gray-300">Te permite llegar al final de la jornada laboral con estabilidad emocional y claridad, evitando picos de irritabilidad o fatiga extrema.</p>
+                    </div>
+                </div>
+
+                <!-- Aliado 3 -->
+                <div class="bg-brand-darkblue/80 p-4 rounded-2xl border-l-4 border-brand-sky space-y-2">
+                    <div class="flex items-center space-x-2">
+                        <span class="text-xl">🍋</span>
+                        <h3 class="text-sm font-bold text-white">3. Citrato de Magnesio Limón <span class="text-brand-sky text-xs block">(Regalo Plenux Market)</span></h3>
+                    </div>
+                    <p class="text-xs text-gray-300 leading-relaxed">
+                        En cada compra te obsequiamos este sobre de 15 gramos de alta absorción. El citrato de magnesio relaja los músculos tensos, calma la excitabilidad del sistema nervioso y optimiza el tránsito intestinal.
+                    </p>
+                    <div class="bg-brand-sky/5 p-2 rounded-xl border border-brand-sky/10 mt-1">
+                        <p class="text-xs text-brand-sky font-bold">💡 Beneficio extra:</p>
+                        <p class="text-[11px] text-gray-300">Diseñado específicamente para días de alta demanda física o mental donde sientes rigidez en la espalda o la cabeza saturada. ¡Un reinicio instantáneo!</p>
+                    </div>
+                </div>
+
+                <!-- Conclusión Sinergia -->
+                <div class="bg-brand-sky/10 p-4 rounded-2xl border border-brand-sky/20 text-center">
+                    <p class="text-xs text-white font-bold">¿Cómo trabajan juntos?</p>
+                    <p class="text-[11px] text-gray-300 mt-1">
+                        Mientras la Melena de León enciende tus capacidades cognitivas y la Ashwagandha mantiene las preocupaciones a raya, el Citrato de Magnesio libera la tensión física. ¡Mente activa y cuerpo relajado!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PÁGINA 3: PROTOCOLO Y HORARIOS ================= -->
+        <section id="page-3" class="page-transition hidden space-y-6">
+            
+            <!-- Protocolo Principal -->
+            <div class="bg-brand-navy rounded-3xl p-6 border border-brand-sky/10 shadow-xl space-y-4">
+                <div class="text-center">
+                    <span class="text-xs text-brand-sky uppercase tracking-widest font-extrabold">Consumo Estratégico</span>
+                    <h2 class="text-2xl font-bold text-white mt-1">Protocolo de Uso Diario</h2>
+                    <p class="text-xs text-brand-silver mt-1">Tu Rutina de Alto Rendimiento (3 veces al día)</p>
+                </div>
+
+                <p class="text-xs text-gray-300 text-center">
+                    Sigue esta estructura simple y constante con tus 90 cápsulas blandas y tu sobre de regalo:
+                </p>
+
+                <!-- Cronograma de Consumo -->
+                <div class="space-y-4 mt-4">
+                    <!-- Toma 1 -->
+                    <div class="flex items-start space-x-3 bg-brand-darkblue/60 p-3 rounded-2xl border border-brand-sky/5">
+                        <div class="bg-brand-sky/20 text-brand-sky p-2 rounded-lg font-bold text-xs mt-1">🌅</div>
+                        <div class="text-xs">
+                            <span class="font-bold text-white block">En el Desayuno (Activación y Enfoque):</span>
+                            Toma 1 cápsula de Melena de León + Ashwagandha con tu desayuno o primer café. Las grasas saludables y la calidez de la bebida optimizan la absorción.
+                        </div>
+                    </div>
+                    <!-- Toma 2 -->
+                    <div class="flex items-start space-x-3 bg-brand-darkblue/60 p-3 rounded-2xl border border-brand-sky/5">
+                        <div class="bg-brand-sky/20 text-brand-sky p-2 rounded-lg font-bold text-xs mt-1">☀️</div>
+                        <div class="text-xs">
+                            <span class="font-bold text-white block">En el Almuerzo (Sostén y Protección Gástrica):</span>
+                            Toma la segunda cápsula de Melena de León + Ashwagandha con tu comida del mediodía. Actúa como escudo estomacal y mantiene la claridad sin bajones.
+                        </div>
+                    </div>
+                    <!-- Toma 3 -->
+                    <div class="flex items-start space-x-3 bg-brand-darkblue/60 p-3 rounded-2xl border border-brand-sky/5">
+                        <div class="bg-brand-sky/20 text-brand-sky p-2 rounded-lg font-bold text-xs mt-1">🌆</div>
+                        <div class="text-xs">
+                            <span class="font-bold text-white block">En la Tarde (Shot de Reseteo Rápido - 3:00 pm a 5:00 pm):</span>
+                            Disuelve tu sobre de Citrato de Magnesio de Plenux Market en agua fría. Un descanso refrescante a limón para soltar contracción muscular y relajar el sistema.
+                        </div>
+                    </div>
+                    <!-- Toma 4 -->
+                    <div class="flex items-start space-x-3 bg-brand-darkblue/60 p-3 rounded-2xl border border-brand-sky/5">
+                        <div class="bg-brand-sky/20 text-brand-sky p-2 rounded-lg font-bold text-xs mt-1">🌙</div>
+                        <div class="text-xs">
+                            <span class="font-bold text-white block">En la Cena (Calma y Reparación Nocturna):</span>
+                            Toma la tercera cápsula de Melena de León + Ashwagandha con tu última comida. Regula el cortisol para un sueño verdaderamente reparador.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GENERADOR DE HORARIO PERSONALIZADO (INTERACTIVO) -->
+            <div class="bg-gradient-to-br from-brand-navy to-brand-darkblue rounded-3xl p-6 border border-brand-sky/20 shadow-2xl space-y-4">
+                <div class="text-center">
+                    <span class="bg-brand-sky text-brand-darkblue text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full">Herramienta Interactiva</span>
+                    <h3 class="text-lg font-bold text-white mt-2">🕒 Generador de Horario Personalizado</h3>
+                    <p class="text-xs text-brand-silver">Indica la hora que sueles despertar para calcular tu rutina perfecta:</p>
+                </div>
+
+                <div class="bg-brand-darkblue/80 p-4 rounded-2xl border border-brand-sky/10 space-y-3">
+                    <label for="wake-time" class="block text-xs font-semibold text-gray-300">¿A qué hora te despiertas?</label>
+                    <div class="flex space-x-2">
+                        <input type="time" id="wake-time" value="07:00" class="flex-grow bg-brand-navy text-white border border-brand-sky/30 rounded-xl px-3 py-2 text-center text-sm focus:outline-none focus:border-brand-sky font-bold">
+                        <button onclick="generateCustomSchedule()" class="bg-brand-sky hover:bg-brand-brightblue text-brand-darkblue font-black text-xs px-4 py-2 rounded-xl transition-all shadow-md active:scale-95">
+                            Calcular
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Horario Generado (Resultado) -->
+                <div id="schedule-result" class="space-y-2 mt-2">
+                    <!-- JS rellena esto dinámicamente -->
+                </div>
+            </div>
+
+            <!-- Guía Nutricional -->
+            <div class="bg-brand-navy/60 rounded-3xl p-6 border border-brand-sky/5 space-y-4">
+                <h3 class="text-sm font-bold text-center text-white uppercase tracking-wider">Nutrición Estratégica</h3>
+                <p class="text-xs text-gray-300 text-center">La suplementación funciona al doble si la alimentas correctamente. Sigue esta guía rápida:</p>
+                
+                <div class="grid grid-cols-1 gap-3">
+                    <div class="bg-blue-950/40 p-3 rounded-2xl border border-blue-900/40">
+                        <span class="text-xs font-bold text-brand-sky block mb-1">🥑 ALIMENTOS ALIADOS (Potenciadores)</span>
+                        <ul class="text-[11px] text-gray-300 space-y-1 list-disc list-inside">
+                            <li><strong>Grasas Saludables:</strong> Aguacate, nueces, almendras, aceite de oliva (protegen membranas).</li>
+                            <li><strong>Antioxidantes:</strong> Arándanos, fresas, chocolate negro puro (combaten envejecimiento neuronal).</li>
+                            <li><strong>Líquidos Amigables:</strong> Infusión de manzanilla o jengibre (apoyo digestivo).</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-900/60 p-3 rounded-2xl border border-slate-800">
+                        <span class="text-xs font-bold text-brand-silver block mb-1">⚠️ DESTRUCTORES DE LA MENTE (A Evitar)</span>
+                        <ul class="text-[11px] text-gray-400 space-y-1 list-disc list-inside">
+                            <li><strong>Azúcar Refinada:</strong> Provoca caídas severas de energía y foco a los 30 min.</li>
+                            <li><strong>Ultraprocesados:</strong> Generan inflamación y dañan la microbiota intestinal.</li>
+                            <li><strong>Cafeína Tardía:</strong> Evitar después de las 6:00 pm (interfiere con el sueño reparador).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PÁGINA 4: HÁBITOS DE NEUROHACKING ================= -->
+        <section id="page-4" class="page-transition hidden">
+            <div class="bg-brand-navy rounded-3xl p-6 border border-brand-sky/10 shadow-xl space-y-6">
+                <div class="text-center">
+                    <span class="text-xs text-brand-sky uppercase tracking-widest font-extrabold font-mono">Aceleradores de Vida</span>
+                    <h2 class="text-2xl font-bold text-white mt-1">Hábitos de Neurohacking</h2>
+                    <p class="text-xs text-brand-silver">Lleva tus resultados de buenos a extraordinarios</p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Hábito 1 -->
+                    <div class="bg-brand-darkblue/60 p-4 rounded-2xl border border-brand-sky/5 flex items-start space-x-3">
+                        <span class="text-2xl mt-1">😴</span>
+                        <div class="space-y-1">
+                            <h3 class="text-xs font-bold text-white">1. Optimiza la "Ventana de Limpieza"</h3>
+                            <p class="text-[11px] text-gray-300 leading-relaxed">
+                                El sistema glinfático lava los desechos metabólicos de tu cerebro durante el sueño profundo. Duerme 7-8 horas continuas y apaga pantallas 45 min antes para potenciar la Melena de León.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Hábito 2 -->
+                    <div class="bg-brand-darkblue/60 p-4 rounded-2xl border border-brand-sky/5 flex items-start space-x-3">
+                        <span class="text-2xl mt-1">💧</span>
+                        <div class="space-y-1">
+                            <h3 class="text-xs font-bold text-white">2. Hidratación Inteligente</h3>
+                            <p class="text-[11px] text-gray-300 leading-relaxed">
+                                El Citrato de Magnesio necesita agua para movilizarse a tus músculos y células de forma eficiente. Toma un vaso extra tras tu shot de limón para evitar de inmediato la fatiga mental.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Hábito 3 -->
+                    <div class="bg-brand-darkgreen/60 p-4 rounded-2xl border border-brand-sky/5 flex items-start space-x-3">
+                        <span class="text-2xl mt-1">⏱️</span>
+                        <div class="space-y-1">
+                            <h3 class="text-xs font-bold text-white">3. Pausas Mentales Estrictas</h3>
+                            <p class="text-[11px] text-gray-300 leading-relaxed">
+                                Tu cerebro no sostiene foco absoluto por más de 90 minutos. Haz pausas de 5 minutos de respiración cada hora. Esto reduce drásticamente el cortisol y optimiza la Ashwagandha.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Hábito 4 -->
+                    <div class="bg-brand-darkgreen/60 p-4 rounded-2xl border border-brand-sky/5 flex items-start space-x-3">
+                        <span class="text-2xl mt-1">🚶</span>
+                        <div class="space-y-1">
+                            <h3 class="text-xs font-bold text-white">4. Movimiento Diario Antiestrés</h3>
+                            <p class="text-[11px] text-gray-300 leading-relaxed">
+                                Una caminata ligera de 15 a 20 minutos al aire libre ayuda a metabolizar la adrenalina acumulada. Abre los canales receptores para que asimiles los adaptógenos con mayor rapidez.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-brand-sky/10 p-4 rounded-2xl border border-brand-sky/20 text-center text-xs text-brand-sky">
+                    💙 <strong>Pequeños cambios diarios</strong> crean transformaciones monumentales en tu salud cerebral y paz interior a mediano plazo.
+                </div>
+            </div>
+        </section>
+
+        <!-- ================= PÁGINA 5: CONTRAPORTADA Y RECOMPRA ================= -->
+        <section id="page-5" class="page-transition hidden space-y-6">
+            <div class="bg-brand-navy rounded-3xl p-6 border border-brand-sky/10 shadow-xl text-center space-y-4">
+                <span class="text-2xl text-brand-sky">🏆</span>
+                <h2 class="text-2xl font-bold text-white">¡Tu viaje hacia un mayor bienestar ha comenzado!</h2>
+                
+                <p class="text-xs text-gray-300 leading-relaxed">
+                    Queremos felicitarte sinceramente por tomar la decisión consciente de cuidar de ti. Invertir en tu salud mental, proteger tu digestión y darle un respiro a tu cuerpo frente al estrés es el mayor acto de rendimiento y amor propio que puedes ejecutar.
+                </p>
+
+                <p class="text-xs text-brand-sky font-semibold italic">
+                    ¡Estamos seguros de que notarás la diferencia!
+                </p>
+            </div>
+
+            <!-- Soporte WhatsApp -->
+            <div class="bg-brand-darkblue/60 p-5 rounded-3xl border border-brand-sky/10 space-y-3">
+                <div class="flex items-center space-x-3">
+                    <span class="text-2xl">💬</span>
+                    <h3 class="text-sm font-bold text-white">¿Tienes alguna duda o consulta?</h3>
+                </div>
+                <p class="text-xs text-gray-300 leading-relaxed">
+                    No estás solo en este proceso. Si deseas ajustar la dosis, tienes preguntas sobre la preparación o quieres compartirnos tus primeros resultados, escríbenos con confianza. Nuestro equipo de soporte especializado por WhatsApp está listo para guiarte en cada paso.
+                </p>
+                <a href="https://wa.me/573194462967?text=Hola%20equipo%20Plenux%20Market,%20tengo%20una%20duda%20sobre%20mi%20manual%20de%20neurohacking..." target="_blank" class="inline-flex items-center space-x-2 text-xs font-bold text-brand-sky hover:text-brand-brightblue transition-colors">
+                    <span>Escribir a Soporte WhatsApp</span>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                </a>
+            </div>
+
+            <!-- Recordatorio Clave -->
+            <div class="bg-brand-sky/5 p-4 rounded-2xl border border-brand-sky/15 text-center">
+                <p class="text-xs text-gray-300">
+                    💡 <strong>IMPORTANTE:</strong> Recuerda que la constancia es la clave del éxito neurocognitivo. Los mejores efectos acumulativos de la Melena de León y Ashwagandha se consolidan a partir de la <strong>tercera semana de uso ininterrumpido</strong>.
+                </p>
+            </div>
+
+            <!-- RECUADRO DESTACADO Y LLAMATIVO DE RECOMPRA -->
+            <div class="bg-gradient-to-br from-brand-navy to-brand-darkblue rounded-3xl p-6 border-2 border-brand-sky shadow-2xl space-y-5 relative overflow-hidden">
+                <div class="absolute -right-12 -bottom-12 w-28 h-28 bg-brand-sky/10 rounded-full blur-xl"></div>
+                
+                <div class="text-center">
+                    <span class="bg-brand-sky text-brand-darkblue text-[10px] font-black uppercase px-3 py-1 rounded-full tracking-wider shadow-md">
+                        Beneficio Exclusivo Cliente Leal
+                    </span>
+                    <h3 class="text-xl font-black text-white mt-3">🛒 Asegura tu Bienestar sin Interrupciones</h3>
+                    <p class="text-xs text-brand-silver mt-1">
+                        Tus 90 cápsulas blandas garantizan 30 días exactos de enfoque y protección premium. No detengas tu impulso.
+                    </p>
+                </div>
+
+                <div class="bg-brand-darkblue/90 p-4 rounded-2xl border border-brand-sky/20 space-y-4">
+                    <p class="text-xs text-center text-gray-200">
+                        Ingresa tu nombre para personalizar tu pedido de renovación con un <strong class="text-brand-sky">10% DE DESCUENTO</strong> y agendar por WhatsApp:
+                    </p>
+
+                    <!-- Input Nombre -->
+                    <div class="space-y-1.5">
+                        <label for="repurchase-name" class="block text-[11px] font-bold text-brand-sky uppercase tracking-wider">Tu Nombre Completo:</label>
+                        <input type="text" id="repurchase-name" placeholder="Ej: Carolina Gómez" class="w-full bg-brand-navy text-white border border-brand-sky/30 rounded-xl px-3 py-2 text-sm focus:outline-none focus:border-brand-sky placeholder-gray-500 font-medium">
+                    </div>
+
+                    <!-- Validador de error -->
+                    <p id="name-error" class="text-[11px] text-red-400 hidden text-center">⚠️ Por favor escribe tu nombre para que sepamos con quién hablar.</p>
+
+                    <!-- Botón de Recompra -->
+                    <button onclick="sendRepurchase()" class="w-full bg-brand-sky hover:bg-brand-brightblue text-brand-darkblue font-black text-xs py-3 rounded-xl transition-all shadow-lg active:scale-95 flex items-center justify-center space-x-2 tracking-wider uppercase">
+                        <!-- Icono WhatsApp -->
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.713-1.458L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.42 9.864-9.864.002-2.637-1.03-5.117-2.905-6.993C16.558 1.87 14.09 .839 11.46.839c-5.441 0-9.866 4.422-9.87 9.865-.002 1.82.477 3.591 1.391 5.125l-.955 3.498 3.582-.939zM18.006 14.73c-.328-.165-1.946-.961-2.246-1.071-.3-.11-.518-.165-.735.165-.218.328-.844 1.071-1.035 1.29-.19.218-.382.245-.71.08-.328-.164-1.386-.511-2.64-1.631-.975-.87-1.633-1.947-1.824-2.274-.19-.328-.02-.505.143-.668.148-.146.328-.382.492-.573.164-.191.218-.328.328-.546.11-.218.055-.41-.027-.573-.082-.164-.735-1.772-1.007-2.427-.265-.638-.535-.55-.735-.56l-.626-.01c-.218 0-.573.082-.873.41-.3.328-1.146 1.12-1.146 2.731 0 1.611 1.173 3.167 1.337 3.385.164.218 2.308 3.525 5.59 4.945.78.337 1.39.54 1.86.689.784.248 1.498.213 2.062.129.629-.094 1.946-.795 2.219-1.53c.273-.735.273-1.366.191-1.5-.08-.135-.3-.218-.627-.383z"/>
+                        </svg>
+                        <span>Solicitar Recompra con -10%</span>
+                    </button>
+                    <p class="text-[10px] text-gray-400 text-center mt-2 font-mono italic">
+                        _Cupón válido exclusivamente para compras recurrentes vía WhatsApp de Soporte._
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Barra de Navegación del Pie de Página (Fácil acceso móvil) -->
+    <footer class="bg-brand-darkblue border-t border-brand-navy py-4 px-4 sticky bottom-0 z-50">
+        <div class="max-w-md mx-auto flex items-center justify-between space-x-3">
+            <!-- Botón Anterior -->
+            <button id="btn-prev" onclick="changePage(-1)" class="flex-1 bg-brand-navy/60 hover:bg-brand-navy text-gray-400 hover:text-white py-3 rounded-2xl text-xs font-bold transition-all border border-brand-navy cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center space-x-1" disabled>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/></svg>
+                <span>Anterior</span>
+            </button>
+
+            <!-- Menú Índice Desplegable -->
+            <div class="relative">
+                <button onclick="toggleIndex()" class="bg-brand-navy text-brand-sky p-3 rounded-2xl text-sm font-bold border border-brand-sky/20 flex items-center justify-center active:scale-95 transition-all">
+                    🗂️ <span class="hidden xs:inline ml-1">Menú</span>
+                </button>
+                <!-- Popup de páginas -->
+                <div id="index-dropdown" class="hidden absolute bottom-16 right-0 w-52 bg-brand-navy border border-brand-sky/20 rounded-2xl shadow-2xl p-2 z-50 space-y-1">
+                    <button onclick="goToPage(1)" class="w-full text-left text-xs px-3 py-2 rounded-xl text-brand-ice hover:bg-brand-darkblue font-bold transition-colors">Pág 1: Portada</button>
+                    <button onclick="goToPage(2)" class="w-full text-left text-xs px-3 py-2 rounded-xl text-brand-ice hover:bg-brand-darkblue font-bold transition-colors">Pág 2: Sinergia de Aliados</button>
+                    <button onclick="goToPage(3)" class="w-full text-left text-xs px-3 py-2 rounded-xl text-brand-ice hover:bg-brand-darkblue font-bold transition-colors">Pág 3: Protocolo y Horarios</button>
+                    <button onclick="goToPage(4)" class="w-full text-left text-xs px-3 py-2 rounded-xl text-brand-ice hover:bg-brand-darkblue font-bold transition-colors">Pág 4: Hábitos Clave</button>
+                    <button onclick="goToPage(5)" class="w-full text-left text-xs px-3 py-2 rounded-xl text-brand-ice hover:bg-brand-darkblue font-bold transition-colors">Pág 5: Soporte y Descuento</button>
+                </div>
+            </div>
+
+            <!-- Botón Siguiente -->
+            <button id="btn-next" onclick="changePage(1)" class="flex-1 bg-brand-sky hover:bg-brand-brightblue text-brand-darkblue py-3 rounded-2xl text-xs font-black transition-all flex items-center justify-center space-x-1 active:scale-95">
+                <span>Siguiente</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+            </button>
+        </div>
+    </footer>
+
+    <!-- Lógica JavaScript del Sistema -->
+    <script>
+        let currentPage = 1;
+        const totalPages = 5;
+
+        window.onload = function() {
+            generateCustomSchedule();
+        }
+
+        function goToPage(pageNum) {
+            if (pageNum < 1 || pageNum > totalPages) return;
+            
+            document.getElementById(`page-${currentPage}`).classList.add('hidden');
+            document.getElementById(`page-${currentPage}`).classList.remove('block');
+            
+            currentPage = pageNum;
+            document.getElementById(`page-${currentPage}`).classList.remove('hidden');
+            document.getElementById(`page-${currentPage}`).classList.add('block');
+
+            document.getElementById('page-counter').textContent = `Página ${currentPage} de ${totalPages}`;
+            document.getElementById('progress-bar').style.width = `${(currentPage / totalPages) * 100}%`;
+
+            document.getElementById('btn-prev').disabled = (currentPage === 1);
+            if (currentPage === totalPages) {
+                document.getElementById('btn-next').innerHTML = `<span>¡Finalizar!</span>`;
+            } else {
+                document.getElementById('btn-next').innerHTML = `<span>Siguiente</span><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>`;
+            }
+
+            document.getElementById('index-dropdown').classList.add('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function changePage(direction) {
+            const destinationPage = currentPage + direction;
+            if (destinationPage === totalPages + 1) {
+                goToPage(5);
+                const repurchaseSection = document.getElementById('repurchase-name');
+                repurchaseSection.focus();
+                repurchaseSection.scrollIntoView({ behavior: 'smooth' });
+            } else {
+                goToPage(destinationPage);
+            }
+        }
+
+        function toggleIndex() {
+            const dropdown = document.getElementById('index-dropdown');
+            dropdown.classList.toggle('hidden');
+        }
+
+        function formatMinutes(timeStr, addedMinutes) {
+            const [hours, minutes] = timeStr.split(':').map(Number);
+            let date = new Date();
+            date.setHours(hours);
+            date.setMinutes(minutes + addedMinutes);
+            
+            let hh = date.getHours();
+            let mm = date.getMinutes();
+            const ampm = hh >= 12 ? 'PM' : 'AM';
+            hh = hh % 12;
+            hh = hh ? hh : 12;
+            mm = mm < 10 ? '0'+mm : mm;
+            return `${hh}:${mm} ${ampm}`;
+        }
+
+        function generateCustomSchedule() {
+            const wakeTimeInput = document.getElementById('wake-time').value;
+            if (!wakeTimeInput) return;
+
+            const timeDesayuno = formatMinutes(wakeTimeInput, 30);
+            const timeAlmuerzo = formatMinutes(wakeTimeInput, 360);
+            const timeTarde = formatMinutes(wakeTimeInput, 540);
+            const timeCena = formatMinutes(wakeTimeInput, 780);
+
+            const resultContainer = document.getElementById('schedule-result');
+            resultContainer.innerHTML = `
+                <div class="bg-brand-navy/60 p-4 rounded-2xl border border-brand-sky/20 space-y-3">
+                    <p class="text-xs text-brand-sky font-bold uppercase tracking-wider text-center">👇 Tu Plan de Horarios Sugerido:</p>
+                    
+                    <div class="space-y-2 text-xs">
+                        <div class="flex justify-between items-center bg-brand-darkblue/60 p-2 rounded border border-brand-sky/10">
+                            <span class="text-gray-300 font-medium">🌅 Desayuno (Melena + Ashwa)</span>
+                            <span class="font-mono font-bold text-brand-sky">${timeDesayuno}</span>
+                        </div>
+                        <div class="flex justify-between items-center bg-brand-darkblue/60 p-2 rounded border border-brand-sky/10">
+                            <span class="text-gray-300 font-medium">☀️ Almuerzo (Melena + Ashwa)</span>
+                            <span class="font-mono font-bold text-brand-sky">${timeAlmuerzo}</span>
+                        </div>
+                        <div class="flex justify-between items-center bg-brand-darkblue/60 p-2 rounded border border-brand-sky/10">
+                            <span class="text-gray-300 font-medium">🍋 Tarde (Citrato de Magnesio)</span>
+                            <span class="font-mono font-bold text-brand-sky">${timeTarde}</span>
+                        </div>
+                        <div class="flex justify-between items-center bg-brand-darkblue/60 p-2 rounded border border-brand-sky/10">
+                            <span class="text-gray-300 font-medium">🌙 Cena (Melena + Ashwa)</span>
+                            <span class="font-mono font-bold text-brand-sky">${timeCena}</span>
+                        </div>
+                    </div>
+                    <div class="text-[10px] text-gray-400 text-center italic mt-1">
+                        Puedes tomarle captura de pantalla a este horario para guardarlo en tu galería móvil.
+                    </div>
+                </div>
+            `;
+        }
+
+        function sendRepurchase() {
+            const nameInput = document.getElementById('repurchase-name').value.trim();
+            const errorLabel = document.getElementById('name-error');
+
+            if (!nameInput) {
+                errorLabel.classList.remove('hidden');
+                document.getElementById('repurchase-name').focus();
+                return;
+            } else {
+                errorLabel.classList.add('hidden');
+            }
+
+            const basePhone = "573194462967"; 
+            const textMessage = `¡Hola! Vengo del Manual de Neurohacking. Mi nombre es *${nameInput}*.\n\nQuiero aprovechar mi *10% DE DESCUENTO* exclusivo de cliente recurrente para asegurar mi pedido de recompra de mis 90 cápsulas blandas (Plenux Market) antes de que se me acaben.\n\n¿Me ayudan a procesar mi orden? ¡Muchas gracias!`;
+            
+            const encodedText = encodeURIComponent(textMessage);
+            const finalUrl = `https://wa.me/${basePhone}?text=${encodedText}`;
+
+            window.open(finalUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
+
+```
